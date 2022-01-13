@@ -1,0 +1,21 @@
+<div style="text-align:center">
+  <form class="example-form" [formGroup]="myForm" (submit)="submitForm()">
+    <custom-select
+      placeholder="Favorite Food2"
+      [foods]="[null, 'burger', 'spaghetti', 'fries']"
+      formControlName="favoriteFood"
+      [errorStateMatcher]="matcher"
+    ></custom-select>
+    <button>Submit</button>
+  </form>
+</div>
+<form class="example-form" [formGroup]="myForm" (submit)="submitForm()">
+<mat-form-field class="example-full-width">
+  <mat-select placeholder='sszzzzz' #select2 [formControl]="control">
+    <mat-option *ngFor="let food of foods" [value]="food">
+      {{ food }}
+    </mat-option>
+  </mat-select>
+  <mat-error>This is required.</mat-error>
+</mat-form-field>
+</form>
